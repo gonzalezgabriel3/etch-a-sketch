@@ -1,10 +1,9 @@
 let div = document.querySelector(".container");
 div.setAttribute("style", "height: 600px; width: 600px;background-color: blue; display: flex; flex-direction:column; margin: auto;");
 const btn = document.querySelector(".btn");
-const body = document.querySelector("body");
+btn.setAttribute("style", "background-color: gold; padding: 8px; border-radius: 12px; font-size: 20px; display: block; margin: auto; margin-bottom: 18px; width: 200px;")
 
-newGrid(16);
-    
+newGrid(16);    
 
 function newGrid(columns){   
     for (let i=0; i < columns; i++){
