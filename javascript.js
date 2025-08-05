@@ -15,7 +15,10 @@ function newGrid(columns){
         for (let x=0; x<columns; x++){
             const squareRow = document.createElement("div");            
             squareRow.setAttribute("style", "flex: 1; border: 1px dotted black;");
-            squareRow.addEventListener("mouseover", ()=>{squareRow.style.backgroundColor = "black";})
+            squareRow.addEventListener("mouseover", ()=>{
+                let randomColor = function (){return  Math.floor(Math.random() * 256); }
+                squareRow.style.backgroundColor = `rgb(${+randomColor()},${+randomColor()},${+randomColor()})`;
+            });
             squareColumn.appendChild(squareRow); 
 
         }     
@@ -34,5 +37,6 @@ btn.addEventListener("click", (() => {
     while (+userChoice < 1 || +userChoice > 100 || !(+userChoice));
            
         div.replaceChildren();       
-        newGrid(userChoice);          
-}))
+        newGrid(userChoice); 
+               
+}));
